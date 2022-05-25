@@ -9,9 +9,9 @@ pipeline {
         stage('Docker Build') {
             steps {
                 echo "${env.BUILD_NUMBER}"
-                sh 'sudo docker build --tag jeetdocker21/test:${env.BUILD_NUMBER} .'
-                sh 'sudo docker push jeetdocker21/test:${env.BUILD_NUMBER}'
-                echo 'Succefully push ${env.BUILD_NUMBER} version of the app'
+                sh 'sudo docker build --tag jeetdocker21/test:$BUILD_NUMBER .'
+                sh 'sudo docker push jeetdocker21/test:$BUILD_NUMBER'
+                echo 'Succefully push $BUILD_NUMBER version of the app'
             }
         }
     }
