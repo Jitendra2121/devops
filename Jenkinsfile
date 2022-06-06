@@ -18,7 +18,8 @@ pipeline {
                 echo "Succefully push the version ${BUILD_NUMBER_X} of the python flask app"
             }
         }
-    
+    }
+
     echo env.BUILD_NUMBER
     def Latest_Build_Number = env.BUILD_NUMBER
     build(
@@ -30,5 +31,4 @@ pipeline {
              propagate: false]
         ]
     )
-    }
 }
