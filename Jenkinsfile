@@ -15,7 +15,7 @@ pipeline {
                 sh 'sudo docker build --tag jeetdocker21/test:$BUILD_NUMBER .'
                 sh 'sudo docker push jeetdocker21/test:$BUILD_NUMBER'
                 echo 'Build Number: ' + env.BUILD_NUMBER_X
-                echo "Succefully push ${BUILD_NUMBER_X} version of the python app"
+                echo "Succefully push the version ${BUILD_NUMBER_X} of the python app"
             }
         }
     }
