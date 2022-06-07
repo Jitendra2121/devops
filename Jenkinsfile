@@ -15,7 +15,7 @@ pipeline {
                 sh 'sudo docker build --tag jeetdocker21/test:$BUILD_NUMBER .'
                 sh 'sudo docker push jeetdocker21/test:$BUILD_NUMBER'
                 echo 'Build Number: ' + env.BUILD_NUMBER_X
-                echo "Succefully push the version ${BUILD_NUMBER_X} of the python flask app"
+                echo "Succefully push the ${BUILD_NUMBER_X}th version of the python flask app"
             }
         }
         stage("Build_Number_Passing") {
