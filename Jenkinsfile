@@ -21,7 +21,7 @@ pipeline {
         stage("Build_Number_Passing") {
             steps {
                 build job: 'eks-gitops-final', parameters: [string(name: 'BUILD_NUMBER_X', value: "${env.BUILD_NUMBER}")]
-                echo "Passing the Build Number: ${BUILD_NUMBER_X} to eks-gitops job"
+                echo "Passing the Build Number: ${BUILD_NUMBER_X} to the eks-gitops job"
             }
         }
     }
