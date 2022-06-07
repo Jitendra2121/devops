@@ -17,18 +17,10 @@ pipeline {
                 echo 'Build Number: ' + env.BUILD_NUMBER_X
                 echo "Succefully push the version ${BUILD_NUMBER_X} of the python flask app"
             }
+        stage("Build_Number_Passing") {
+            steps {
+                build job: 'eks-gitops-final', parameters: [string(name: 'BUILD_NUMBER_X', value: "${env.BUILD_NUMBER}")]
+            }
         }
     }
-
-    echo env.BUILD_NUMBER
-    def Latest_Build_Number = env.BUILD_NUMBER
-    build(
-        job: 'Downstream', 
-        parameters: [
-            [$class: 'StringParameterValue', 
-             name: 'Latest_Build_Number', 
-             value: env.BUILD_NUMBER, 
-             propagate: false]
-        ]
-    )
 }
